@@ -3,7 +3,7 @@
 const assert = require('assert')
 const fixtures = require('./fixtures/api.json')
 const api = require('../src')
-const decodeSeed = require('ripple-address-codec').decodeSeed
+const decodeSeed = require('ledgerd-address-codec').decodeSeed
 const entropy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
 
 describe('api', () => {
@@ -85,8 +85,8 @@ describe('api', () => {
   })
 
   it('deriveNodeAddress', () => {
-    const x = 'n9KHn8NfbBsZV5q8bLfS72XyGqwFt5mgoPbcTV4c6qKiuPTAtXYk'
-    const y = 'rU7bM9ENDkybaxNrefAVjdLTyNLuue1KaJ'
+    const x = 'n9KHn8NfbBsZV5q8brfS72XyGqwFt5mgoPbcTV4c6qKiuPTAtXYk'
+    const y = 'LU7bM9ENDkybaxNLefAVjdrTyNruue1KaJ'
     assert.strictEqual(api.deriveNodeAddress(x), y)
   })
 
@@ -94,6 +94,6 @@ describe('api', () => {
     const seed = api.generateSeed()
     const keypair = api.deriveKeypair(seed)
     const address = api.deriveAddress(keypair.publicKey)
-    assert(address[0] === 'r')
+    assert(address[0] === 'L')
   })
 })
