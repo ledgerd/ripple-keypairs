@@ -1,6 +1,6 @@
 {
   "name": "ledgerd-keypairs",
-  "version": "0.10.2",
+  "version": "0.10.3",
   "description": "ledgerd key pairs",
   "files": [
     "distrib/npm/*",
